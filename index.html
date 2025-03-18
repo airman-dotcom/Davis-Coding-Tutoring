@@ -49,15 +49,18 @@
     <img class="pt-2 grow object-fill" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/rocket2.gif" alt="rocket">
     <p id="launch" class="text-center absolute inset-0 place-self-center text-[12vw] text-white bg-black/50 rounded-3xl"></p>
    </div>
-   <div id="info" class="w-screen h-6/5 grid bg-black grid-rows-5">
+   <div id="info" class="w-screen h-1/2 grid bg-indigo-950 grid-rows-5">
         <div class="text-center text-[6vw] text-white">With programming you can</div>
         
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-pulse opacity-25">__________________</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">********************</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">--------------------------</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">%%%%%%%%%%%</div>
-
-
+        <div class="w-screen h-3/5 bg-blue-500 grid justify-items-center mt-8 bg-linear-to-b/longer from-black to-blue-400 grid-rows-2">
+        <div class="text-center text-[6vw] text-white">Start today</div>
+        <img class="max-w-1/2 rounded-4xl" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/typing.gif" />
+        
+        </div>
    </div>
 </body>
 <script>
@@ -82,6 +85,8 @@ for (let i = 0; i<btns.length;i++){
         setTimeout(function(){
         	btns[i].style = `background-color: ${btns_colors[i]};`
         }, 500)
+        btns[i].classList.add("shadow-lg")
+        btns[i].classList.add("shadow-white")
     }
 }
 
