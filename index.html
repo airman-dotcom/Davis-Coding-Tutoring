@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davis Coding Tutor</title>
     <link rel="stylesheet" href="style.css"/>
+    <style>
+    
+    .clicks {
+    	background-color: #393e48;
+    }
+    
+    @keyframes trans {
+    from {background-color: #393e48;}
+    to {background-color: red;}
+    }
+    
+    
+    @keyframes trans2 {
+    from {background-color: #393e48;}
+    to {background-color: blue;}
+    }
+    
+    
+    @keyframes trans3 {
+    from {background-color: #393e48;}
+    to {background-color: purple;}
+    }
+    
+    
+    @keyframes trans4 {
+    from {background-color: #393e48;}
+    to {background-color: orange;}
+    }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,23 +41,67 @@
 </head>
 <body>
    <div class="w-screen h-1/6 bg-white shadow-xl flex justify-center">
-    <img src="assets/DCTlogo.png" alt="logo" />
+    <img class="w-36" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/DCTlogo.png" alt="logo" />
    </div>
    <div class="relative flex w-screen h-6/5">
-    <img class="grow object-fill" src="assets/rocket2.gif" alt="rocket">
+    <img class="grow object-fill" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/rocket2.gif" alt="rocket">
     <p id="launch" class="text-center absolute inset-0 place-self-center text-[12vw] text-white bg-black/50 rounded-3xl"></p>
    </div>
    <div class="w-screen h-6/5 grid bg-black grid-rows-5">
         <div class="text-center text-[6vw] text-white">With programming you can</div>
         
-        <div class="text-center text-[5vw] text-white place-self-center bg-[#393e48] pl-4 pr-4 rounded-3xl animate-pulse opacity-25">__________________</div>
-        <div class="text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4">Bolster your resume</div>
-        <div class="text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4">Begin a new career</div>
-        <div class="text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4">Build anything you want</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-pulse opacity-25">__________________</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">********************</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">--------------------------</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">%%%%%%%%%%%</div>
 
 
    </div>
 </body>
-<script src="script.js"></script>
+<script>
+window.scrollTo(0,0);
+function pxtovh(px){
+    return (px / window.innerHeight) * 100;
+}
+
+
+let btns = document.querySelectorAll(".clicks");
+let btns_text = ["Be competitive in college admissions", "Bolter your resume", "Begin a new career", "Build anything you want"]
+let btns_animations = ["trans", "trans2", "trans3", "trans4"]
+let btns_colors = ["red", "blue", "purple", "orange"]
+let launch = document.getElementById("launch");
+let launch_txt = "Launch into the <span class='text-blue-500'>future</span>";
+for (let i = 0; i<btns.length;i++){
+	btns[i].onclick = function(){
+    	btns[i].innerHTML = btns_text[i];
+        btns[i].classList.remove("opacity-25");
+        btns[i].classList.remove("animate-pulse");
+        btns[i].style = `animation: ${btns_animations[i]} 0.5s linear;`
+        setTimeout(function(){
+        	btns[i].style = `background-color: ${btns_colors[i]};`
+        }, 500)
+    }
+}
+
+function typewriter(i){
+    if (i == launch_txt.length) return;
+    if (launch_txt[i] == "<"){
+        setTimeout(function(){
+            launch.innerHTML += launch_txt.slice(i, launch_txt.length);
+        }, 700)
+        return;
+    }
+    launch.innerHTML += launch_txt.charAt(i)
+    setTimeout(function(){
+        typewriter(i+1)
+    }, 100)
+}
+
+document.body.onload = function(){
+    setTimeout(function(){
+        typewriter(0)
+    }, 1500)
+}
+</script>
 
 </html>
