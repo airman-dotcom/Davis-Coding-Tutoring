@@ -6,7 +6,46 @@
     <title>Davis Coding Tutor</title>
     <link rel="stylesheet" href="style.css"/>
     <style>
-    
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+@keyframes hor-movement {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: 50%;
+  }
+}
+
+@keyframes ver-movement {
+  from {
+    margin-top: 0vh;
+  }
+  to {
+    margin-top: 9vh;
+  }
+}
+
+.ucd, .ucsd, .uci, .mcgill, .box > div {
+  position: relative;
+  animation-name: hor-movement, ver-movement;
+  animation-duration: 3.141s, 1.414s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+    * {
+        font-family: "Space Grotesk";
+    }
+
+    .nave > div, .nave > img {
+        cursor: pointer;
+    }
     .clicks {
     	background-color: #393e48;
     }
@@ -33,42 +72,118 @@
     from {background-color: #393e48;}
     to {background-color: orange;}
     }
+
+    .slider {
+  -webkit-appearance: none;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
     </style>
+    <link rel="icon" type="image/x-icon" href="assets/penny.jpg">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-   <div class="w-screen h-1/6 bg-white shadow-xl flex justify-center">
-    <img class="w-36" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/DCTlogo.png" alt="logo" />
+   <div class="nave w-screen h-1/7 bg-white shadow-xl flex justify-evenly">
+    <a href="#why code" class="w-36 text-black text-[2vw] self-center">Why Code?</a>
+    <a href="#about me" class="w-36 text-black text-[2vw] self-center">About me</a>
+    <img href="#" class="w-36 self-center" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/DCTlogo.png" alt="logo" />
+    <a href="#cost" class="w-36 text-black text-[2vw] self-center">Cost</a>
+    <a href="#contact" class="w-36 text-black text-[2vw] self-center">Contact</a>
+
+
    </div>
    <div class="relative flex w-screen h-6/5">
     <img class="pt-2 grow object-fill" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/rocket2.gif" alt="rocket">
     <p id="launch" class="text-center absolute inset-0 place-self-center text-[12vw] text-white bg-black/50 rounded-3xl"></p>
    </div>
-   <div id="info" class="w-screen h-1/2 grid bg-indigo-950 grid-rows-5">
+   <div id="why code" class="w-screen md:h-6/5 h-3/5 grid bg-indigo-950 grid-rows-5">
         <div class="text-center text-[6vw] text-white">With programming you can</div>
         
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-pulse opacity-25">__________________</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">********************</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">--------------------------</div>
         <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">%%%%%%%%%%%</div>
-        <div class="w-screen h-3/5 bg-blue-500 grid justify-items-center mt-8 bg-linear-to-b/longer from-black to-blue-400 grid-rows-2">
-        <div class="text-center text-[6vw] text-white">Start today</div>
-        <img class="max-w-1/2 rounded-4xl" src="https://raw.githubusercontent.com/airman-dotcom/Davis-Coding-Tutoring/refs/heads/main/assets/typing.gif" />
         
-        </div>
    </div>
+   <div id="about me" class="w-screen md:h-8/5 h-3/5 bg-linear-to-b/longer from-indigo-950 to-blue-400">
+        <div class="text-center text-[6vw] text-white">Who am I?</div>
+        <div class="twoway w-screen grid grid-cols-16">
+            <div class="left w-100% h-full col-span-9">
+                <div class="list-disc text-center text-[3vw] grid grid-rows-6 text-white">
+                    <div>• Upcoming College Freshman</div>
+                    <div>• Part of 1678 Citrus Circuits team</div>
+                    <div>• Won <a href="https://acpc-ucd.com" class="underline" target="_blank">UC Davis Coding Compeition</a></div>
+                    <div>• 3rd at <a href="https://cmimc.math.cmu.edu" class="underline" target="_blank">Carnegie Mellon University Competition</a></div>
+                    <div>• Familiar with Data: R and R studio</div>
+                    <div>• Lots of experience with teaching</div>
+                    <div>• Praised for tutoring methods</div>
+                </div>
+            </div>
+            <div class="box right col-span-7">
+                <div class="max-w-1/2 bg-white/75 rounded-3xl text-black text-[3vw]">Colleges Accepted to:</div>
+                <img class="ucd max-w-1/2 bg-white/75 rounded-3xl" src="assets/UC-Davis-logo.png" alt="UC Davis logo">
+                <img class="ucsd max-w-1/2 bg-white/75 rounded-3xl" src="assets/UCSD-Logo.png" alt="UC Davis logo">
+                <img class="uci max-w-1/2 bg-white/75 rounded-3xl" src="assets/uci-logo.png" alt="UC Davis logo">
+                <img class="mcgill max-w-1/2 bg-white/75 rounded-3xl" src="assets/uw.png" alt="UC Davis logo">
+            </div>
+        </div>    
+    </div>
+    <div id="cost" class="grid grid-rows-3 justify-items-center w-screen w-screen h-3/5 bg-linear-to-b/longer from-blue-400 to-orange-300">
+        <div class="text-center text-[6vw] text-white pt-5 place-self-center">Cost</div>
+        <div id="cost2" class="text-center text-[2.5vw] text-white pt-5 place-self-center">Drag slider</div>
+        <div class="grid grid-cols-20 w-full h-full">
+            <div class="text-center col-span-3 text-[2vw] text-white pt-5 place-self-center">Complete Beginner</div>
+            <input type="range" min="5" max="35" value="20" class="slider w-full col-span-14 place-self-center" id="slider">
+            <div class="text-center col-span-3 text-[2vw] text-white pt-5 place-self-center">Advanced<br>Help</div>
+        </div>
+    </div>
+
+    <div id="contact" class="grid grid-rows-3 justify-items-center w-screen w-screen h-4/5 bg-linear-to-b/longer from-orange-300 to-indigo-200">
+        <div class="text-center text-[6vw] text-white pt-5 place-self-center">Contact</div>
+        <div class="email text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-bounce bg-black/50">daviscodingtutor@gmail.com</div>
+        <div class="phone text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-bounce bg-black/50">(530)-746-8367</div>
+
+    </div>
 </body>
 <script>
 window.scrollTo(0,0);
 function pxtovh(px){
     return (px / window.innerHeight) * 100;
 }
-
+let slider = document.getElementById("slider");
+let output = document.getElementById("cost2");
+slider.oninput = function(){
+    output.innerHTML = "Cost: $" + Math.floor(this.value) + "/lesson (max 2 hours, discount with continuation)"; 
+}
 let info_div = document.getElementById("info");
 let btns = document.querySelectorAll(".clicks");
 let btns_text = ["Be competitive in college admissions", "Bolster your resume", "Begin a new career", "Build anything you want"]
