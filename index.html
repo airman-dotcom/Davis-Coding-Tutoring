@@ -26,11 +26,11 @@ html {
     margin-top: 0vh;
   }
   to {
-    margin-top: 9vh;
+    margin-top: 6vh;
   }
 }
 
-.ucd, .ucsd, .uci, .mcgill, .box > div {
+.ucd, .ucsd, .uci, .mcgill {
   position: relative;
   animation-name: hor-movement, ver-movement;
   animation-duration: 3.141s, 1.414s;
@@ -126,15 +126,15 @@ html {
     <p id="launch" class="text-center absolute inset-0 place-self-center text-[12vw] text-white bg-black/50 rounded-3xl"></p>
    </div>
    <div id="why code" class="w-screen md:h-6/5 h-3/5 grid bg-indigo-950 grid-rows-5">
-        <div class="text-center text-[6vw] text-white">With programming you can</div>
+        <div class="text-center text-[6vw] text-white place-self-center">With programming you can</div>
         
-        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-pulse opacity-25">__________________</div>
-        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">********************</div>
-        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">--------------------------</div>
-        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">%%%%%%%%%%%</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center pl-4 pr-4 rounded-3xl animate-pulse opacity-25">Click or Tap</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">Click or Tap</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">Click or Tap</div>
+        <div class="clicks cursor-pointer text-center text-[5vw] text-white place-self-center bg-blue-400 pl-4 pr-4 rounded-3xl animate-pulse opacity-25">Click or Tap</div>
         
    </div>
-   <div id="about me" class="w-screen md:h-8/5 h-3/5 bg-linear-to-b/longer from-indigo-950 to-blue-400">
+   <div id="about me" class="w-screen md:h-8/5 h-2/5 bg-linear-to-b/longer from-indigo-950 to-blue-400">
         <div class="text-center text-[6vw] text-white">Who am I?</div>
         <div class="twoway w-screen grid grid-cols-16">
             <div class="left w-100% h-full col-span-9">
@@ -149,7 +149,7 @@ html {
                 </div>
             </div>
             <div class="box right col-span-7">
-                <div class="max-w-1/2 bg-white/75 rounded-3xl text-black text-[3vw]">Colleges Accepted to:</div>
+                <div class="w-full text-center text-[5vw] text-white">Colleges Accepted to:</div>
                 <img class="ucd max-w-1/2 bg-white/75 rounded-3xl" src="assets/UC-Davis-logo.png" alt="UC Davis logo">
                 <img class="ucsd max-w-1/2 bg-white/75 rounded-3xl" src="assets/UCSD-Logo.png" alt="UC Davis logo">
                 <img class="uci max-w-1/2 bg-white/75 rounded-3xl" src="assets/uci-logo.png" alt="UC Davis logo">
@@ -157,13 +157,13 @@ html {
             </div>
         </div>    
     </div>
-    <div id="cost" class="grid grid-rows-3 justify-items-center w-screen w-screen h-3/5 bg-linear-to-b/longer from-blue-400 to-orange-300">
-        <div class="text-center text-[6vw] text-white pt-5 place-self-center">Cost</div>
-        <div id="cost2" class="text-center text-[2.5vw] text-white pt-5 place-self-center">Drag slider</div>
+    <div id="cost" class="grid grid-rows-3 justify-items-center w-screen w-screen h-2/5 bg-linear-to-b/longer from-blue-400 to-orange-300">
+        <div class="text-center md:text-[6vw] text-[9vw] text-white pt-5 place-self-center">Cost</div>
+        <div id="cost2" class="text-center md:text-[2.5vw] text-[6vw] text-white pt-5 place-self-center">Drag slider</div>
         <div class="grid grid-cols-20 w-full h-full">
-            <div class="text-center col-span-3 text-[2vw] text-white pt-5 place-self-center">Complete Beginner</div>
-            <input type="range" min="5" max="35" value="20" class="slider w-full col-span-14 place-self-center" id="slider">
-            <div class="text-center col-span-3 text-[2vw] text-white pt-5 place-self-center">Advanced<br>Help</div>
+            <div class="text-center md:col-span-3 col-span-6 md:text-[2vw] text-[4vw] text-white pt-5 place-self-center">Complete Beginner</div>
+            <input type="range" min="5" max="35" value="20" class="slider w-full md:col-span-14 col-span-8 place-self-center" id="slider">
+            <div class="text-center md:col-span-3 col-span-6 md:text-[2vw] text-[4vw] text-white pt-5 place-self-center">Advanced<br>Help</div>
         </div>
     </div>
 
