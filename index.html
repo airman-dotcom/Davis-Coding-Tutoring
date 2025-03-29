@@ -54,7 +54,8 @@ html {
     from {background-color: #393e48;}
     to {background-color: red;}
     }
-    
+
+
     
     @keyframes trans2 {
     from {background-color: #393e48;}
@@ -159,11 +160,9 @@ html {
     </div>
     <div id="cost" class="grid grid-rows-3 justify-items-center w-screen w-screen h-2/5 bg-linear-to-b/longer from-blue-400 to-orange-300">
         <div class="text-center md:text-[6vw] text-[9vw] text-white pt-5 place-self-center">Cost</div>
-        <div id="cost2" class="text-center md:text-[2.5vw] text-[6vw] text-white pt-5 place-self-center">Drag slider</div>
-        <div class="grid grid-cols-20 w-full h-full">
-            <div class="text-center md:col-span-3 col-span-6 md:text-[2vw] text-[4vw] text-white pt-5 place-self-center">Complete Beginner</div>
-            <input type="range" min="5" max="35" value="20" class="slider w-full md:col-span-14 col-span-8 place-self-center" id="slider">
-            <div class="text-center md:col-span-3 col-span-6 md:text-[2vw] text-[4vw] text-white pt-5 place-self-center">Advanced<br>Help</div>
+        <div id="cost2" style="width:90%;" class="text-center md:text-[2.5vw] text-[6vw] text-white pt-5 md:pt-9 place-self-center">Drag slider</div>
+        <div class="grid w-full h-full">
+            <input type="range" min="15" max="35" step="5" value="25" style="width:90%" class="slider place-self-center" id="slider">
         </div>
     </div>
     <div id="contact" class="justify-items-center w-screen w-screen md:h-4/5 h-3/5 bg-linear-to-b/longer from-orange-300 to-indigo-200">
@@ -180,13 +179,28 @@ function pxtovh(px){
 }
 let slider = document.getElementById("slider");
 let output = document.getElementById("cost2");
+let cc = ["black", "blue", "green", "darkred", "purple", "maroon"]
+let obj = {
+    15: ["Beginner lessons in ", "Python, ", "Javascript, ", "Web programming"],
+    20: ["Intermediate ", "Python &", " Web dev, ", "Beginner C++ & Java, ", "App dev"],
+    25: ["Advanced", " Python &", " Web dev, ", "Intermediate C++ &", " Java &", " App dev"],
+    30: ["Advanced", " C++ &", " Java"],
+    35: ["Specialized help: ", "R studio, ", "Python, ", "C++, ", "Java, etc."]
+}
 slider.oninput = function(){
-    output.innerHTML = "Cost: $" + Math.floor(this.value) + "/lesson (max 2 hours, discount with continuation)"; 
+    let d = "";
+
+    for (let j = 0;j<obj[this.value].length;j++){
+            let u = `<span class="md:text-[2vw] text-[5vw]" style="color: ${cc[j]};">${obj[this.value][j]}</span>`;
+            d+=u;
+        }
+    console.log(d)
+    output.innerHTML = "Cost: $" + Math.floor(this.value) + "/lesson (max 1 hour, virtual or in-person)" + "<br><br>" + d; 
 }
 let info_div = document.getElementById("info");
 let btns = document.querySelectorAll(".clicks");
 let btns_text = ["Be competitive in college admissions", "Bolster your resume", "Begin a new career", "Build anything you want"]
-let btns_animations = ["trans", "trans2", "trans3", "trans4"]
+let btns_animations = ["trans2", "trans3", "trans", "trans4"]
 let btns_colors = ["blue", "purple", "red", "orange"]
 let launch = document.getElementById("launch");
 let launch_txt = "Launch into the <span class='text-blue-500'>future</span>";
